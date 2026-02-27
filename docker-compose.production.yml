@@ -18,7 +18,7 @@ services:
 
       - traefik.http.services.mailcatcher.loadbalancer.server.port=1080
     healthcheck:
-      test: ["CMD", "curl", "-sf", "http://localhost:1080/"]
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:1080/"]
       interval: 30s
       timeout: 10s
       retries: 3
