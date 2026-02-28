@@ -11,8 +11,8 @@ services:
       - traefik.docker.network=traefik-network
 
       - traefik.http.routers.mailcatcher.rule=Host(`${MAILCATCHER_SERVER_HOSTNAME:?required}`)
-      - traefik.http.routers.mailcatcher.entrypoints=websecure
-      - traefik.http.routers.mailcatcher.tls.certresolver=le-cloudflare
+      - traefik.http.routers.mailcatcher.entrypoints=https
+      - traefik.http.routers.mailcatcher.tls.certresolver=cloudflare
       - traefik.http.routers.mailcatcher.middlewares=trusted@file
       - traefik.http.routers.mailcatcher.service=mailcatcher
 
