@@ -41,7 +41,7 @@ read -rp "MAILCATCHER_SERVER_HOSTNAME (örn: mail.example.com): " MAILCATCHER_SE
 # --------------------------------------------------
 # Docker Network
 # --------------------------------------------------
-NETWORK_NAME="mailcatcher-network"
+NETWORK_NAME="mail-network"
 if docker network inspect "$NETWORK_NAME" > /dev/null 2>&1; then
   echo "ℹ️  Docker network '$NETWORK_NAME' zaten mevcut"
 else
@@ -69,7 +69,7 @@ echo "   Port : 1025"
 echo "   TLS  : Kapalı"
 echo "   Auth : Yok"
 echo "-----------------------------------------------"
-echo "🔗 Test edilecek servisi mailcatcher-network'e ekle:"
+echo "🔗 Test edilecek servisi $NETWORK_NAME'e ekle:"
 echo "   networks:"
-echo "     - mailcatcher-network"
+echo "     - $NETWORK_NAME"
 echo "==============================================="
